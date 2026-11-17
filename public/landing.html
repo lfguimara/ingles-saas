@@ -269,34 +269,26 @@
   .btn-blue:hover{background-position:100% 0;box-shadow:0 14px 36px -8px rgba(255,61,139,.7)}
   .btn-yellow{box-shadow:0 10px 30px -8px rgba(255,210,63,.8)}
 
-  /* hero escuro com neon */
-  .hero{position:relative;background:
-     radial-gradient(600px 380px at 12% 20%,rgba(123,47,255,.55),transparent 70%),
-     radial-gradient(520px 360px at 88% 30%,rgba(255,61,139,.45),transparent 70%),
-     radial-gradient(500px 300px at 50% 110%,rgba(34,211,238,.35),transparent 70%),
-     #070f2e;color:#fff;padding-bottom:0;overflow:hidden}
-  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:26px 26px;-webkit-mask-image:linear-gradient(#000,transparent 85%);mask-image:linear-gradient(#000,transparent 85%);pointer-events:none}
-  .hero .wrap{position:relative;padding-bottom:64px}
-  .hero h1{color:#fff}
-  .hero h1 em{background:linear-gradient(90deg,#22d3ee,#a78bfa,#ff3d8b);-webkit-background-clip:text;background-clip:text;color:transparent}
-
-  /* vídeo de fundo do hero */
-  .hero-video{position:absolute;inset:0;z-index:0;pointer-events:none}
-  .hero-video video{width:100%;height:100%;object-fit:cover;filter:saturate(1.05)}
-  .hero-video::after{content:"";position:absolute;inset:0;background:
-     radial-gradient(600px 380px at 12% 20%,rgba(123,47,255,.45),transparent 70%),
-     radial-gradient(520px 360px at 88% 30%,rgba(255,61,139,.35),transparent 70%),
-     linear-gradient(180deg,rgba(7,15,46,.72) 0%,rgba(7,15,46,.62) 45%,rgba(7,15,46,.9) 100%)}
-  .hero::before{z-index:1}
+  /* hero claro com vídeo */
+  .hero{position:relative;background:#f4f8ff;color:var(--ink);padding-bottom:0;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;z-index:1;background-image:radial-gradient(rgba(10,36,99,.10) 1px,transparent 1px);background-size:26px 26px;-webkit-mask-image:linear-gradient(#000,transparent 85%);mask-image:linear-gradient(#000,transparent 85%);pointer-events:none}
+  .hero .wrap{padding-bottom:64px}
   .hero .wrap,.hero .strip{position:relative;z-index:2}
-  .hero h1,.hero .checks li{text-shadow:0 2px 18px rgba(0,0,0,.45)}
+  .hero-video{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .hero-video video{width:100%;height:100%;object-fit:cover}
+  .hero-video::after{content:"";position:absolute;inset:0;background:
+     radial-gradient(600px 380px at 10% 15%,rgba(123,47,255,.16),transparent 70%),
+     radial-gradient(520px 360px at 90% 25%,rgba(255,61,139,.14),transparent 70%),
+     linear-gradient(180deg,rgba(244,248,255,.80) 0%,rgba(244,248,255,.72) 45%,rgba(244,248,255,.94) 100%)}
   @media (prefers-reduced-motion:reduce){.hero-video video{display:none}}
-  .badge{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#e6ecff;backdrop-filter:blur(6px)}
+  .hero h1{color:var(--ink);text-shadow:0 1px 14px rgba(255,255,255,.7)}
+  .hero h1 em{background:linear-gradient(90deg,#2b59ff,#7b2fff,#ff3d8b);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}
+  .badge{background:#fff;border-color:var(--line);color:var(--ink)}
   .badge b{background:var(--pink)}
-  .checks li{color:#e6ecff}
+  .checks li{color:var(--ink);font-weight:500}
   .checks li::before{background:linear-gradient(135deg,#22d3ee,#7b2fff);color:#fff}
-  .person{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff;backdrop-filter:blur(6px)}
-  .person small{color:#b8c3ea}
+  .person{background:rgba(255,255,255,.9);border-color:var(--line);color:var(--ink);backdrop-filter:blur(6px)}
+  .person small{color:var(--muted)}
   .strip{background:var(--grad);margin-top:0}
 
   /* navegação + faixa */
@@ -359,49 +351,19 @@
   .hero-cta{font-size:17px;padding:18px 34px;margin-bottom:26px;animation:glow 2.4s ease-in-out infinite}
   @keyframes glow{50%{box-shadow:0 0 0 8px rgba(255,61,139,.18),0 14px 40px -6px rgba(255,61,139,.8)}}
 
-  /* ===== FUNDOS ESCUROS COLORIDOS ===== */
-  body{background:#070f2e;color:#fff}
-  nav{background:rgba(7,15,46,.85);border-bottom-color:rgba(255,255,255,.08)}
-  .logo,.nav-links a{color:#fff}
+  /* ===== FUNDOS CLAROS ===== */
+  body{background:#fff;color:var(--ink)}
   section{position:relative}
   section, section[style*="background:#fff"]{background:
-     radial-gradient(700px 400px at 0% 0%,rgba(123,47,255,.28),transparent 70%),
-     radial-gradient(600px 400px at 100% 100%,rgba(43,89,255,.25),transparent 70%),
-     #0a1440 !important}
+     radial-gradient(700px 400px at 0% 0%,rgba(123,47,255,.06),transparent 70%),
+     radial-gradient(600px 400px at 100% 100%,rgba(43,89,255,.06),transparent 70%),
+     #ffffff !important}
   section:nth-of-type(even), section[style*="background:#fff"]:nth-of-type(even){background:
-     radial-gradient(700px 400px at 100% 0%,rgba(255,61,139,.22),transparent 70%),
-     radial-gradient(600px 400px at 0% 100%,rgba(34,211,238,.18),transparent 70%),
-     #0c0f3a !important}
-  .goals{background:
-     radial-gradient(800px 500px at 50% 0%,rgba(123,47,255,.4),transparent 70%),
-     radial-gradient(600px 400px at 90% 100%,rgba(255,61,139,.25),transparent 70%),#100a3f !important}
-  h2{color:#fff}
-  .lead{color:#b8c3ea}
-  .lead a{color:#ff7ab0 !important}
-  .under{background:linear-gradient(transparent 58%,rgba(255,61,139,.45) 58%)}
-  h2 .under{color:#fff}
-
-  .chip{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#fff}
-  .chip span{background:rgba(255,255,255,.12)}
-  .chip small{color:#b8c3ea}
-  .goal-panel{color:var(--ink)}
-  .goal-panel .lead{color:var(--muted)}
-
-  .tab{border-color:rgba(255,255,255,.12) !important}
-  .tab h3{color:#fff}
-  .tab p{color:#b8c3ea}
-  .tab .n{color:rgba(255,255,255,.25)}
-
-  .tutor,.plan,.rev{color:var(--ink)}
-  .rating{color:#b8c3ea}.rating .head{color:#fff}
-
-  details{border-color:rgba(255,255,255,.12)}
-  summary{color:#fff}
-  details p{color:#b8c3ea}
-
-  .trial p{color:#4a3d10}
-  footer{background:#050a22;margin-top:0}
-  .phone{color:var(--ink)}
+     radial-gradient(700px 400px at 100% 0%,rgba(255,61,139,.07),transparent 70%),
+     radial-gradient(600px 400px at 0% 100%,rgba(34,211,238,.08),transparent 70%),
+     #f6f4ff !important}
+  .goals{background:linear-gradient(180deg,#f3efff,#fff0f7) !important}
+  footer{background:#0a2463;margin-top:0}
   section#faq + section{padding-bottom:96px !important}
 </style>
 </head>
@@ -419,7 +381,7 @@
   <div class="wrap">
     <a href="#" class="logo"><i>S</i>SpeakUp</a>
     <div class="nav-links"><a href="#objetivos">Objetivos</a><a href="#metodo">Método</a><a href="#ebooks">E-books</a><a href="#planos">Planos</a><a href="#faq">Dúvidas</a></div>
-    <div class="nav-cta"><a href="/entrar" style="font-weight:700;margin-right:14px;color:#fff">Entrar</a><a href="/cadastro" class="btn btn-blue">Teste grátis</a></div>
+    <div class="nav-cta"><a href="/entrar" style="font-weight:700;margin-right:18px;color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;align-self:center">Entrar</a><a href="/cadastro" class="btn btn-blue">Teste grátis</a></div>
   </div>
 </nav>
 
