@@ -381,7 +381,10 @@
   .tutor .pic.photo .live{text-shadow:none}
 
   /* fundo real na seção método */
-  .stage{background:linear-gradient(150deg,rgba(43,89,255,.35),rgba(123,47,255,.25) 55%,rgba(255,61,139,.35)),url('https://images.pexels.com/photos/7651750/pexels-photo-7651750.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover}
+  .stage{background:linear-gradient(150deg,rgba(43,89,255,.30),rgba(123,47,255,.18) 55%,rgba(255,61,139,.30)),var(--stage-img) center/cover;transition:background .4s}
+  /* foto por objetivo */
+  .g-photo{aspect-ratio:16/10;border-radius:20px;background:#dfe6f7 center/cover;box-shadow:0 18px 40px -22px rgba(11,24,56,.45);transition:opacity .25s}
+  #g-lessons{position:relative;margin:-48px 16px 0}
   .stage::before{display:none}
 </style>
 </head>
@@ -469,7 +472,7 @@
         <ul id="g-list"></ul>
         <a href="/cadastro" class="btn btn-blue">Montar minha trilha</a>
       </div>
-      <div id="g-lessons"></div>
+      <div><div id="g-photo" class="g-photo" role="img" aria-label=""></div><div id="g-lessons"></div></div>
     </div>
   </div>
 </section>
@@ -486,7 +489,7 @@
         <div class="tab" data-t="2"><div class="n">03</div><div><h3>Progresso que você enxerga</h3><p>Acompanhe sua evolução em fala, escuta, leitura e escrita semana a semana.</p></div></div>
         <div class="tab" data-t="3"><div class="n">04</div><div><h3>Certificado em cada nível</h3><p>Complete um nível e receba um certificado para colocar no currículo e no LinkedIn.</p></div></div>
       </div>
-      <div class="stage">
+      <div class="stage" style="--stage-img:url(https://images.pexels.com/photos/7651750/pexels-photo-7651750.jpeg?auto=compress&cs=tinysrgb&w=1000)">
         <div class="phone">
           <div class="screen on"><div class="ttl">Tutor Max 🤖</div><div class="bub a">Tell me about your last trip!</div><div class="bub b">I go to Rio last month.</div><div class="bub a">Nice! Try: “I <b>went</b> to Rio last month.” ✨</div><div class="mic">🎙️</div></div>
           <div class="screen"><div class="ttl">Minha biblioteca</div><div class="slot">📘 Inglês do Zero<em>Abrir</em></div><div class="slot">📗 Conversação Essencial<em>62%</em></div><div class="slot">📙 Inglês para Viagens<em>Novo</em></div><div class="slot">📕 Business English<em>Novo</em></div></div>
@@ -629,8 +632,12 @@
     {t:"Preparatório TOEFL / IELTS", d:"Estratégias e simulados para alcançar a nota que você precisa.", l:["Simulados com correção automática","Writing com feedback da IA","Speaking com avaliação da IA"], s:[["E-book","Reading strategies",55],["Prática com IA","Speaking task 2",30]]}
   ];
   const $ = s => document.querySelector(s);
+  const goalImgs = [["https://images.pexels.com/photos/7644081/pexels-photo-7644081.jpeg?auto=compress&cs=tinysrgb&w=1000","Entrevista de emprego"],["https://images.pexels.com/photos/6726195/pexels-photo-6726195.jpeg?auto=compress&cs=tinysrgb&w=1000","Viajantes no aeroporto"],["https://images.pexels.com/photos/6147148/pexels-photo-6147148.jpeg?auto=compress&cs=tinysrgb&w=1000","Estudantes no campus"],["https://images.pexels.com/photos/8518887/pexels-photo-8518887.jpeg?auto=compress&cs=tinysrgb&w=1000","Amigos conversando com café"],["https://images.pexels.com/photos/6683887/pexels-photo-6683887.jpeg?auto=compress&cs=tinysrgb&w=1000","Estudantes fazendo prova"]];
+  const stageImgs = ["https://images.pexels.com/photos/7651750/pexels-photo-7651750.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.pexels.com/photos/17792266/pexels-photo-17792266.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.pexels.com/photos/3761504/pexels-photo-3761504.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.pexels.com/photos/9829305/pexels-photo-9829305.jpeg?auto=compress&cs=tinysrgb&w=1000"];
+  [...goalImgs.map(g=>g[0]), ...stageImgs].forEach(u=>{ const im=new Image(); im.src=u; });
   function showGoal(i){
     const g = goals[i];
+    const ph = $('#g-photo'); ph.style.backgroundImage = 'url(' + goalImgs[i][0] + ')'; ph.setAttribute('aria-label', goalImgs[i][1]);
     $('#g-title').textContent = g.t; $('#g-desc').textContent = g.d;
     $('#g-list').innerHTML = g.l.map(x=>`<li>${x}</li>`).join('');
     $('#g-lessons').innerHTML = g.s.map(([m,n,p])=>`<div class="lesson"><small>${m}</small><b>${n}</b><div class="bar"><i style="width:0"></i></div><small>${p}% concluído</small></div>`).join('');
@@ -643,7 +650,7 @@
   // Abas do método
   const tabs = document.querySelectorAll('.tab'), screens = document.querySelectorAll('.screen');
   let cur = 0, timer;
-  function showTab(i){ cur=i; tabs.forEach((t,k)=>t.classList.toggle('on',k===i)); screens.forEach((s,k)=>s.classList.toggle('on',k===i)); }
+  function showTab(i){ cur=i; document.querySelector('.stage').style.setProperty('--stage-img','url(' + stageImgs[i] + ')'); tabs.forEach((t,k)=>t.classList.toggle('on',k===i)); screens.forEach((s,k)=>s.classList.toggle('on',k===i)); }
   function auto(){ clearInterval(timer); timer=setInterval(()=>showTab((cur+1)%tabs.length),5000); }
   tabs.forEach((t,k)=>t.addEventListener('click',()=>{showTab(k);auto();}));
   auto();
