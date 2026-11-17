@@ -386,6 +386,13 @@
   .g-photo{aspect-ratio:16/10;border-radius:20px;background:#dfe6f7 center/cover;box-shadow:0 18px 40px -22px rgba(11,24,56,.45);transition:opacity .25s}
   #g-lessons{position:relative;margin:-48px 16px 0}
   .stage::before{display:none}
+
+  /* depoimentos com foto */
+  .rev{display:flex;flex-direction:column}
+  .rev p{flex:1}
+  .rev .who{gap:12px}
+  .rev .who .av{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 3px #fff,0 0 0 4px var(--line)}
+  .rev .who .goal{width:auto;height:auto;flex:none;border-radius:999px;padding:4px 12px;align-self:center}
 </style>
 </head>
 <body>
@@ -402,7 +409,7 @@
   <div class="wrap">
     <a href="#" class="logo"><i>S</i>SpeakUp</a>
     <div class="nav-links"><a href="#objetivos">Objetivos</a><a href="#metodo">Método</a><a href="#ebooks">E-books</a><a href="#planos">Planos</a><a href="#faq">Dúvidas</a></div>
-    <div class="nav-cta"><a href="/entrar" style="font-weight:700;margin-right:18px;color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;align-self:center">Entrar</a><a href="/cadastro" class="btn btn-blue">Teste grátis</a></div>
+    <div class="nav-cta"><a href="/entrar" style="font-weight:700;margin-right:18px;color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;align-self:center">Entrar</a><a href="/cadastro" class="btn btn-blue">Assinar</a></div>
   </div>
 </nav>
 
@@ -421,7 +428,7 @@
         <li>E-books completos do básico ao avançado</li>
         <li>Trilha personalizada para o seu objetivo</li>
       </ul>
-      <a href="/cadastro" class="btn btn-blue hero-cta">Começar grátis agora →</a>
+      <a href="/cadastro" class="btn btn-blue hero-cta">Quero começar agora →</a>
       <div class="people">
         <div class="person"><span style="background:#dff4ff">🤖</span><div><b>Max</b><small>Seu tutor com IA</small></div></div>
         <div class="person"><span style="background:#dbe6ff">📚</span><div><b>Biblioteca</b><small>E-books para cada nível</small></div></div>
@@ -516,34 +523,18 @@
   </div>
 </section>
 
-<!-- TESTE GRÁTIS -->
-<section>
-  <div class="wrap">
-    <div class="trial">
-      <div class="confetti"></div>
-      <span class="note hand">boa notícia!</span>
-      <div class="seal"><div><span class="hand">Oferta por<br>tempo<br>limitado</span></div></div>
-      <div style="position:relative">
-        <h2>Teste grátis por 7 dias</h2>
-        <p>Acesso completo ao tutor com IA, aos e-books e ao app. Cancele quando quiser, sem multa.</p>
-      </div>
-      <a href="/cadastro" class="btn" style="position:relative">Experimentar agora »</a>
-    </div>
-  </div>
-</section>
-
 <!-- PLANOS -->
 <section id="planos" style="padding-top:20px">
   <div class="wrap center">
     <span class="eyebrow">Planos</span>
     <h2>Escolha seu plano</h2>
-    <p class="lead">Todos começam com 7 dias grátis. Sem fidelidade no mensal.</p>
+    <p class="lead">Sem fidelidade no mensal. Não gostou? Você tem 7 dias para pedir o dinheiro de volta.</p>
     <div class="plans" style="text-align:left">
       <div class="plan">
         <h3>Mensal</h3><div class="tag">Flexível, cancele quando quiser</div>
         <div class="price"><span class="head">R$ 49</span><span>/mês</span></div>
         <ul><li>Tutor com IA (30 min/dia)</li><li>E-books do seu nível</li><li>App mobile</li><li>Certificado por nível</li></ul>
-        <a href="/cadastro" class="btn btn-line">Começar grátis</a>
+        <a href="/cadastro" class="btn btn-line">Assinar o Mensal</a>
       </div>
       <div class="plan pro">
         <span class="ribbon">Mais escolhido · 50% OFF</span>
@@ -552,7 +543,7 @@
         <div class="price" style="margin-top:0"><span>12x</span><span class="head">R$ 49</span></div>
         <span class="perday">≈ R$ 1,60 por dia</span>
         <ul><li>Tudo do Mensal</li><li>Tutor com IA ilimitado</li><li>Biblioteca completa de e-books</li><li>E-books de carreira e viagem</li><li>Relatório de evolução semanal</li></ul>
-        <a href="/cadastro" class="btn btn-yellow">Começar grátis →</a>
+        <a href="/cadastro" class="btn btn-yellow">Assinar o Anual Pro →</a>
       </div>
       <div class="plan">
         <h3>Empresas</h3><div class="tag">Para times a partir de 5 pessoas</div>
@@ -571,9 +562,9 @@
     <h2>O que nossos alunos dizem</h2>
     <div class="rating"><span class="head">4,9</span><span class="stars" style="font-size:20px">★★★★★</span><span>com base em 8.400 avaliações</span></div>
     <div class="reviews" style="text-align:left">
-      <div class="rev"><span class="stars">★★★★★</span><p>"Em 3 meses perdi o medo de falar. Treinar com a IA sem ninguém me julgando fez toda a diferença."</p><div class="who"><span style="background:#f4a582"></span><div><b>Júlia M.</b><small>Designer · SP</small></div><span class="goal">Carreira</span></div></div>
-      <div class="rev"><span class="stars">★★★★★</span><p>"Consegui uma vaga remota numa empresa de fora. Simulei a entrevista com a IA várias vezes antes."</p><div class="who"><span style="background:#92c5de"></span><div><b>Rafael S.</b><small>Dev · Recife</small></div><span class="goal">Carreira</span></div></div>
-      <div class="rev"><span class="stars">★★★★★</span><p>"Fui pra Londres e me virei sozinha. Li o e-book de viagens no avião e treinei as frases com a IA."</p><div class="who"><span style="background:#c2a5cf"></span><div><b>Carolina V.</b><small>Enfermeira · Curitiba</small></div><span class="goal">Viagens</span></div></div>
+      <div class="rev"><span class="stars">★★★★★</span><p>"Em 3 meses perdi o medo de falar. Treinar com a IA sem ninguém me julgando fez toda a diferença."</p><div class="who"><img class="av" src="https://images.pexels.com/photos/30557590/pexels-photo-30557590.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop" alt="Foto de Júlia M." loading="lazy" width="44" height="44"><div><b>Júlia M.</b><small>Designer · SP</small></div><span class="goal">Carreira</span></div></div>
+      <div class="rev"><span class="stars">★★★★★</span><p>"Consegui uma vaga remota numa empresa de fora. Simulei a entrevista com a IA várias vezes antes."</p><div class="who"><img class="av" src="https://images.pexels.com/photos/40267560/pexels-photo-40267560.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop" alt="Foto de Rafael S." loading="lazy" width="44" height="44"><div><b>Rafael S.</b><small>Dev · Recife</small></div><span class="goal">Carreira</span></div></div>
+      <div class="rev"><span class="stars">★★★★★</span><p>"Fui pra Londres e me virei sozinha. Li o e-book de viagens no avião e treinei as frases com a IA."</p><div class="who"><img class="av" src="https://images.pexels.com/photos/20772568/pexels-photo-20772568.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop" alt="Foto de Carolina V." loading="lazy" width="44" height="44"><div><b>Carolina V.</b><small>Enfermeira · Curitiba</small></div><span class="goal">Viagens</span></div></div>
     </div>
   </div>
 </section>
@@ -587,7 +578,7 @@
       <p class="lead">Não achou sua resposta? <a href="#" style="color:var(--blue);font-weight:700">Fale com a gente no WhatsApp</a>.</p>
     </div>
     <div>
-      <details open><summary>Como funciona o teste grátis?</summary><p>Você tem 7 dias de acesso completo. Se cancelar antes do fim, não paga nada.</p></details>
+      <details open><summary>Posso cancelar quando quiser?</summary><p>Sim. O plano mensal não tem fidelidade. E, como garante o Código de Defesa do Consumidor, você tem 7 dias após a compra para desistir e receber todo o valor de volta.</p></details>
       <details><summary>Preciso saber inglês para começar?</summary><p>Não. O teste de nivelamento monta sua trilha a partir do zero, se for o caso.</p></details>
       <details><summary>Como funciona o tutor com IA?</summary><p>Você conversa com o tutor por texto ou voz, sobre qualquer assunto. Ele corrige sua pronúncia e gramática na hora e sugere jeitos mais naturais de falar.</p></details>
       <details><summary>Como recebo os e-books?</summary><p>Eles ficam na sua biblioteca dentro da plataforma. Você lê no celular, tablet ou computador e pode baixar em PDF.</p></details>
@@ -601,9 +592,9 @@
   <div class="wrap">
     <div class="final">
       <h2>Sua primeira conversa em inglês pode ser hoje.</h2>
-      <p>Comece grátis e fale com o tutor com IA em menos de 5 minutos.</p>
+      <p>Assine hoje e fale com o tutor com IA em menos de 5 minutos.</p>
       <div class="cta-row">
-        <a href="/cadastro" class="btn btn-yellow">Começar teste grátis →</a>
+        <a href="/cadastro" class="btn btn-yellow">Começar agora →</a>
         <a href="#" class="btn btn-line">💬 Falar no WhatsApp</a>
       </div>
     </div>

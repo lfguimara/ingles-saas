@@ -1,4 +1,4 @@
-import type { ChapterMeta } from "./content";
 import type { Plan } from "./usage";
 
-export const canRead = (plan: Plan, chapter: Pick<ChapterMeta, "free">) => plan === "pro" || chapter.free;
+/** Não existe teste grátis: só assinante lê os capítulos. */
+export const canRead = (plan: Plan) => plan === "pro";

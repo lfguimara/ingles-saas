@@ -16,7 +16,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
             <div className="hidden sm:block"><AppNav /></div>
           </div>
           <div className="flex items-center gap-3">
-            {s.plan === "trial" ? (
+            {s.plan !== "pro" ? (
               <Link href="/app/conta" className="btn btn-yellow px-4 py-2 text-sm">Assinar</Link>
             ) : (
               <span className="rounded-full bg-green/10 px-3 py-1 text-xs font-bold text-green">PRO</span>

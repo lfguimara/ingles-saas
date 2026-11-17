@@ -34,7 +34,7 @@ export default async function Trilha() {
                   <ol>
                     {e.chapters.map((c) => {
                       const done = s.done.includes(chapterKey(l.slug, e.slug, c.slug));
-                      const open = canRead(s.plan, c);
+                      const open = canRead(s.plan);
                       return (
                         <li key={c.slug} className="border-b border-line last:border-0">
                           <Link href={`/app/${l.slug}/${e.slug}/${c.slug}`} className="flex items-center gap-4 px-5 py-4 transition hover:bg-bg">
@@ -43,7 +43,7 @@ export default async function Trilha() {
                             </span>
                             <span className="min-w-0 flex-1">
                               <span className="block truncate font-bold">{c.title}</span>
-                              <span className="text-xs text-muted">~{c.minutes} min{c.free && s.plan === "trial" ? " · grátis" : ""}</span>
+                              <span className="text-xs text-muted">~{c.minutes} min</span>
                             </span>
                             <span className="text-blue">→</span>
                           </Link>

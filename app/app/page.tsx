@@ -29,7 +29,7 @@ export default async function Dashboard() {
             <h2 className="relative mt-1 text-2xl font-extrabold sm:text-3xl">{nextMeta.chapter.title}</h2>
             <p className="relative mt-2 text-white/70">~{nextMeta.chapter.minutes} min de leitura + prática com o Max</p>
             <span className="btn btn-yellow relative mt-6">
-              {canRead(s.plan, nextMeta.chapter) ? "Abrir capítulo →" : "🔒 Desbloquear com o plano"}
+              {canRead(s.plan) ? "Abrir capítulo →" : "🔒 Desbloquear com o plano"}
             </span>
           </Link>
         ) : (
@@ -43,7 +43,7 @@ export default async function Dashboard() {
           <div className="rounded-3xl border border-line bg-white p-6">
             <p className="text-sm font-bold text-muted">🤖 Mensagens com o Max</p>
             <p className="mt-2 font-head text-4xl font-extrabold text-navy">{limit.remaining}</p>
-            <p className="text-sm text-muted">{s.plan === "pro" ? "restantes hoje (60 por dia)" : "restantes no teste grátis"}</p>
+            <p className="text-sm text-muted">{s.plan === "pro" ? "restantes hoje (60 por dia)" : "assine para conversar com o Max"}</p>
           </div>
           <div className="rounded-3xl border border-line bg-white p-6">
             <p className="text-sm font-bold text-muted">📚 Capítulos lidos</p>

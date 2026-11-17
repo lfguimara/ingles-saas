@@ -19,7 +19,7 @@ export async function POST(req: Request) {
   const body = await req.json().catch(() => null);
   const ch = body && getChapter(String(body.level), String(body.ebook), String(body.chapter));
   if (!ch) return json(404, "Capítulo não encontrado.");
-  if (!canRead(session.plan, ch)) return json(403, "Este capítulo faz parte do plano pago.");
+  if (!canRead(session.plan)) return json(403, "Assine para praticar com o Max.");
 
   const messages = sanitizeHistory(body.messages);
   if (!messages.length || messages.at(-1)!.role !== "user") return json(400, "Mensagem vazia.");
@@ -28,9 +28,7 @@ export async function POST(req: Request) {
   if (!limit.ok) {
     return json(
       429,
-      session.plan === "trial"
-        ? "Suas 10 mensagens do teste grátis acabaram. Assine para continuar praticando com o Max. 🚀"
-        : "Você chegou ao limite de 60 mensagens de hoje. O Max volta amanhã! 💤",
+      "Você chegou ao limite de 60 mensagens de hoje. O Max volta amanhã! 💤",
     );
   }
 

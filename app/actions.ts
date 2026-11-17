@@ -12,7 +12,7 @@ export async function signUp(formData: FormData) {
   const levelIn = String(formData.get("level") ?? "a1");
   if (!name) redirect("/cadastro?erro=nome");
   const level = getLevels().some((l) => l.slug === levelIn) ? levelIn : "a1";
-  await saveSession({ name, email, goal, level, plan: "trial", done: [], usage: { day: today(), today: 0, total: 0 } });
+  await saveSession({ name, email, goal, level, plan: "none", done: [], usage: { day: today(), today: 0, total: 0 } });
   redirect("/app");
 }
 
@@ -25,7 +25,7 @@ export async function markRead(level: string, ebook: string, chapter: string, ne
   redirect(nextHref ?? "/app/trilha");
 }
 
-export async function setPlan(plan: "trial" | "pro") {
+export async function setPlan(plan: "none" | "pro") {
   const s = await getSession();
   if (!s) redirect("/cadastro");
   s.plan = plan;

@@ -26,13 +26,13 @@ export default async function ChapterPage({ params }: { params: Promise<Params> 
   const { prev, next } = getAdjacent(p.level, p.ebook, p.chapter);
   const done = s.done.includes(chapterKey(p.level, p.ebook, p.chapter));
 
-  if (!canRead(s.plan, ch)) {
+  if (!canRead(s.plan)) {
     return (
       <main className="mx-auto max-w-xl px-4 py-16 text-center">
         <span className="text-5xl">🔒</span>
         <p className="mt-6 text-sm font-bold uppercase tracking-widest text-blue">{ch.ebook.title} · {ch.level.cefr}</p>
         <h1 className="mt-2 text-3xl font-extrabold text-navy">{ch.title}</h1>
-        <p className="mt-4 text-muted">Este capítulo faz parte do plano completo. Assine para liberar todos os e-books e até 60 conversas por dia com o Max.</p>
+        <p className="mt-4 text-muted">Assine para liberar todos os e-books e até 60 conversas por dia com o Max.</p>
         <Link href="/app/conta" className="btn btn-yellow mt-8">Assinar por 12x R$ 49 →</Link>
         <p className="mt-4"><Link href="/app/trilha" className="text-sm font-bold text-muted underline">Voltar para a trilha</Link></p>
       </main>

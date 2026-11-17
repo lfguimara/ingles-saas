@@ -5,7 +5,7 @@ import matter from "gray-matter";
 const ROOT = path.join(process.cwd(), "content");
 const SLUG = /^[a-z0-9-]+$/;
 
-export type ChapterMeta = { slug: string; title: string; order: number; free: boolean; minutes: number };
+export type ChapterMeta = { slug: string; title: string; order: number; minutes: number };
 export type Ebook = { slug: string; title: string; subtitle: string; emoji: string; chapters: ChapterMeta[] };
 export type Level = { slug: string; title: string; cefr: string; description: string; ebooks: Ebook[] };
 export type Chapter = ChapterMeta & { content: string; level: Omit<Level, "ebooks">; ebook: Omit<Ebook, "chapters"> };
@@ -41,16 +41,15 @@ export function getLevels(): Level[] {
   const levels = sortedEntries(ROOT, true).map(({ name, parsed }) => {
     const levelDir = path.join(ROOT, name);
     const meta = readMeta(levelDir);
-    const ebooks = sortedEntries(levelDir, true).map((eb, ei) => {
+    const ebooks = sortedEntries(levelDir, true).map((eb) => {
       const ebDir = path.join(levelDir, eb.name);
       const ebMeta = readMeta(ebDir);
-      const chapters = sortedEntries(ebDir, false).map((c, ci) => {
+      const chapters = sortedEntries(ebDir, false).map((c) => {
         const { data, content } = matter(fs.readFileSync(path.join(ebDir, c.name), "utf8"));
         return {
           slug: c.parsed.slug,
           title: String(data.title ?? c.parsed.slug),
           order: c.parsed.order,
-          free: ei === 0 && ci === 0,
           minutes: wordsToMinutes(content),
         };
       });

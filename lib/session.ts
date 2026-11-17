@@ -19,7 +19,8 @@ export function parseSession(raw: string | undefined): Session | null {
   if (!raw) return null;
   try {
     const s = JSON.parse(raw) as Session;
-    if (!s.name || !s.plan) return null;
+    if (!s.name) return null;
+    if (s.plan !== "pro") s.plan = "none";
     if (s.usage.day !== today()) s.usage = { day: today(), today: 0, total: s.usage.total };
     return s;
   } catch {

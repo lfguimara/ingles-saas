@@ -75,7 +75,7 @@ e isso só fica bom numa plataforma única.
 
 **Marca:** SpeakUp, com o tutor "Max". Já existe uma landing page própria em `index.html` (commits de 2026-11-17), que vira a página de vendas.
 
-**Planos:** valem os que já estão na landing da SpeakUp: Mensal R$ 49/mês e Anual Pro 12x R$ 49, com 7 dias grátis. A comparação com a Fluency e os preços finais ficam com o dono.
+**Planos:** Mensal R$ 49/mês e Anual Pro 12x R$ 49. **Sem teste grátis** (decisão do dono em 2026-11-17): sem assinatura não há capítulos nem mensagens com o Max. Vale o direito de arrependimento de 7 dias do CDC (reembolso), que não é teste grátis.
 
 **Trilha:** níveis A1 → A2 → B1 → B2 → C1. Cada nível tem 1 ou mais ebooks, e cada
 ebook tem capítulos. Progresso por capítulo: não iniciado → lido → exercícios feitos.

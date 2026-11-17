@@ -13,13 +13,6 @@ describe("content", () => {
     }
   });
 
-  it("só o primeiro capítulo do primeiro ebook de cada nível é grátis", () => {
-    for (const level of getLevels()) {
-      const flags = level.ebooks.flatMap((e) => e.chapters.map((c) => c.free));
-      expect(flags[0]).toBe(true);
-      expect(flags.slice(1).every((f) => !f)).toBe(true);
-    }
-  });
 
   it("getChapter devolve conteúdo e contexto", () => {
     const a1 = getLevels()[0];
