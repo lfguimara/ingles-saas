@@ -393,6 +393,15 @@
   .rev .who{gap:12px}
   .rev .who .av{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 3px #fff,0 0 0 4px var(--line)}
   .rev .who .goal{width:auto;height:auto;flex:none;border-radius:999px;padding:4px 12px;align-self:center}
+
+  /* vídeo de fundo no CTA final */
+  .final{background:#2b59ff;animation:none}
+  .final::before{display:none}
+  .final-video{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .final-video video{width:100%;height:100%;object-fit:cover}
+  .final-video::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(43,89,255,.82),rgba(123,47,255,.72) 55%,rgba(255,61,139,.78))}
+  .final > *:not(.final-video){position:relative;z-index:1}
+  @media (prefers-reduced-motion:reduce){.final-video video{display:none}}
 </style>
 </head>
 <body>
@@ -591,6 +600,7 @@
 <section style="padding-top:0;padding-bottom:0">
   <div class="wrap">
     <div class="final">
+      <div class="final-video" aria-hidden="true"><video autoplay muted loop playsinline preload="none" src="https://videos.pexels.com/video-files/5793449/5793449-hd_1280_720_25fps.mp4"></video></div>
       <h2>Sua primeira conversa em inglês pode ser hoje.</h2>
       <p>Assine hoje e fale com o tutor com IA em menos de 5 minutos.</p>
       <div class="cta-row">
