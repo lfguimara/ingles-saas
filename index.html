@@ -258,6 +258,94 @@
     .people{flex-wrap:wrap}
     .final{padding:50px 20px}
   }
+
+  /* ===== TEMA VIBRANTE ===== */
+  :root{--blue:#2b59ff;--blue-d:#1d3fd6;--pink:#ff3d8b;--violet:#7b2fff;--cyan:#22d3ee;--yellow:#ffd23f;
+    --grad:linear-gradient(120deg,#2b59ff 0%,#7b2fff 55%,#ff3d8b 100%)}
+  .eyebrow{color:var(--pink)}
+  .under{background:linear-gradient(transparent 58%,rgba(255,61,139,.35) 58%)}
+  h2 .under{color:var(--violet)}
+  .btn-blue{background:var(--grad);background-size:160% 100%;box-shadow:0 10px 30px -8px rgba(123,47,255,.65)}
+  .btn-blue:hover{background-position:100% 0;box-shadow:0 14px 36px -8px rgba(255,61,139,.7)}
+  .btn-yellow{box-shadow:0 10px 30px -8px rgba(255,210,63,.8)}
+
+  /* hero escuro com neon */
+  .hero{position:relative;background:
+     radial-gradient(600px 380px at 12% 20%,rgba(123,47,255,.55),transparent 70%),
+     radial-gradient(520px 360px at 88% 30%,rgba(255,61,139,.45),transparent 70%),
+     radial-gradient(500px 300px at 50% 110%,rgba(34,211,238,.35),transparent 70%),
+     #070f2e;color:#fff;padding-bottom:0;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:26px 26px;-webkit-mask-image:linear-gradient(#000,transparent 85%);mask-image:linear-gradient(#000,transparent 85%);pointer-events:none}
+  .hero .wrap{position:relative;padding-bottom:64px}
+  .hero h1{color:#fff}
+  .hero h1 em{background:linear-gradient(90deg,#22d3ee,#a78bfa,#ff3d8b);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .badge{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#e6ecff;backdrop-filter:blur(6px)}
+  .badge b{background:var(--pink)}
+  .checks li{color:#e6ecff}
+  .checks li::before{background:linear-gradient(135deg,#22d3ee,#7b2fff);color:#fff}
+  .person{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff;backdrop-filter:blur(6px)}
+  .person small{color:#b8c3ea}
+  .strip{background:var(--grad);margin-top:0}
+
+  /* navegação + faixa */
+  .promo{background:linear-gradient(90deg,#ff3d8b,#7b2fff,#2b59ff,#7b2fff,#ff3d8b);background-size:300% 100%}
+  .live-pill b{color:var(--pink)}
+
+  /* números coloridos */
+  .stat{border:0;color:#fff;box-shadow:0 18px 40px -16px rgba(43,89,255,.55)}
+  .stat .head,.stat .head sup{color:#fff}
+  .stat p{color:rgba(255,255,255,.85)}
+  .stat:nth-child(1){background:linear-gradient(135deg,#2b59ff,#22d3ee)}
+  .stat:nth-child(2){background:linear-gradient(135deg,#7b2fff,#c04dff)}
+  .stat:nth-child(3){background:linear-gradient(135deg,#ff3d8b,#ff7a59)}
+  .stat:nth-child(4){background:linear-gradient(135deg,#ffb800,#ffd23f);color:#0b1838}
+  .stat:nth-child(4) .head,.stat:nth-child(4) .head sup,.stat:nth-child(4) p{color:#0b1838}
+  .stat:hover{transform:translateY(-6px) rotate(-1deg)}
+
+  /* objetivos */
+  .goals{background:linear-gradient(180deg,#f3efff,#fff0f7)}
+  .chip.on{background:var(--grad);border-color:transparent;box-shadow:0 10px 26px -10px rgba(123,47,255,.7)}
+  .chip:hover{border-color:var(--violet)}
+  .goal-panel{background:#fff;box-shadow:0 24px 60px -30px rgba(123,47,255,.45)}
+  .goal-panel li::before{color:var(--pink)}
+  .bar i{background:var(--grad)}
+
+  /* método */
+  .tab.on .n{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tab .n{color:#c9c2ff}
+  .stage{background:linear-gradient(150deg,#2b59ff,#7b2fff 55%,#ff3d8b)}
+  .stage::before{background:radial-gradient(circle,rgba(255,255,255,.35),transparent 65%)}
+  .bub.b,.mic{background:var(--grad)}
+
+  /* e-books */
+  .tutor{border:0;box-shadow:0 14px 34px -18px rgba(11,24,56,.4)}
+  .tutor:hover{transform:translateY(-8px) rotate(-1deg);box-shadow:0 26px 50px -18px rgba(123,47,255,.55)}
+
+  /* teste grátis */
+  .trial{background:linear-gradient(120deg,#ffd23f,#ffb800);box-shadow:0 30px 60px -30px rgba(255,184,0,.9)}
+  .trial .seal .hand{color:var(--pink)}
+  .trial .btn{background:var(--grad)}
+
+  /* planos */
+  .plan.pro{background:linear-gradient(160deg,#0b1838,#3b1a8f 60%,#7b2fff);box-shadow:0 30px 70px -25px rgba(123,47,255,.75)}
+  .plan.pro li::before{color:var(--yellow)}
+  .ribbon{background:var(--pink);color:#fff}
+  .perday{background:var(--yellow)}
+  .plan li::before{color:var(--violet)}
+
+  /* depoimentos */
+  .rev{border:0;box-shadow:0 14px 34px -20px rgba(11,24,56,.35);border-top:4px solid var(--violet)}
+  .rev:nth-child(2){border-top-color:var(--pink)}
+  .rev:nth-child(3){border-top-color:var(--cyan)}
+  .rev .goal{background:#f1eaff;color:var(--violet)}
+
+  summary::after{color:var(--pink)}
+
+  /* CTA final animado */
+  .final{background:linear-gradient(120deg,#2b59ff,#7b2fff,#ff3d8b,#7b2fff,#2b59ff);background-size:300% 100%;animation:shift 12s linear infinite;box-shadow:0 30px 70px -30px rgba(123,47,255,.8)}
+  footer{background:#070f2e}
+  .hero-cta{font-size:17px;padding:18px 34px;margin-bottom:26px;animation:glow 2.4s ease-in-out infinite}
+  @keyframes glow{50%{box-shadow:0 0 0 8px rgba(255,61,139,.18),0 14px 40px -6px rgba(255,61,139,.8)}}
 </style>
 </head>
 <body>
@@ -290,6 +378,7 @@
         <li>E-books completos do básico ao avançado</li>
         <li>Trilha personalizada para o seu objetivo</li>
       </ul>
+      <a href="#planos" class="btn btn-blue hero-cta">Começar grátis agora →</a>
       <div class="people">
         <div class="person"><span style="background:#dff4ff">🤖</span><div><b>Max</b><small>Seu tutor com IA</small></div></div>
         <div class="person"><span style="background:#dbe6ff">📚</span><div><b>Biblioteca</b><small>E-books para cada nível</small></div></div>
