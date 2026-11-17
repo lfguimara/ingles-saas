@@ -365,6 +365,24 @@
   .goals{background:linear-gradient(180deg,#f3efff,#fff0f7) !important}
   footer{background:#0a2463;margin-top:0}
   section#faq + section{padding-bottom:96px !important}
+
+  /* faixa de benefícios: centralizada (o padding do .hero .wrap vazava para cá) */
+  .hero .strip .wrap{padding-top:22px;padding-bottom:22px;justify-items:center;align-items:center}
+  .strip div{justify-content:center}
+  /* faixa de benefícios compacta no celular */
+  @media (max-width:600px){
+    .hero .strip .wrap{grid-template-columns:repeat(3,1fr);gap:8px;padding-top:16px;padding-bottom:16px;align-items:start}
+    .strip div{flex-direction:column;justify-content:flex-start;text-align:center;gap:8px;font-size:12px;line-height:1.3;font-weight:600}
+    .strip i{width:34px;height:34px;border-radius:10px;font-size:16px}
+  }
+
+  /* capas dos e-books com foto */
+  .tutor .pic.photo{place-items:end start;text-align:left !important;padding:18px 18px 20px !important;font-size:22px !important;line-height:1.1;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+  .tutor .pic.photo .live{text-shadow:none}
+
+  /* fundo real na seção método */
+  .stage{background:linear-gradient(150deg,rgba(43,89,255,.35),rgba(123,47,255,.25) 55%,rgba(255,61,139,.35)),url('https://images.pexels.com/photos/7651750/pexels-photo-7651750.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover}
+  .stage::before{display:none}
 </style>
 </head>
 <body>
@@ -487,10 +505,10 @@
     <h2>E-books para cada<br>etapa da sua jornada</h2>
     <p class="lead">Leia no celular, no tablet ou no computador. Cada e-book vem com exercícios e áudios para treinar com a IA.</p>
     <div class="tutors">
-      <div class="tutor"><div class="pic" style="background:linear-gradient(150deg,#2563ff,#0a2463);color:#fff;font-size:20px;font-weight:800;font-family:'Bricolage Grotesque';text-align:center;padding:20px"><span class="live">Iniciante</span>Inglês<br>do Zero</div><div class="info"><b>Inglês do Zero</b><small>Níveis A1 e A2</small><div class="tags"><span>Vocabulário</span><span>Gramática</span></div></div></div>
-      <div class="tutor"><div class="pic" style="background:linear-gradient(150deg,#7ddcff,#2563ff);color:#fff;font-size:20px;font-weight:800;font-family:'Bricolage Grotesque';text-align:center;padding:20px"><span class="live">Mais lido</span>Conversação<br>Essencial</div><div class="info"><b>Conversação Essencial</b><small>Níveis A2 e B1</small><div class="tags"><span>Frases prontas</span><span>Pronúncia</span></div></div></div>
-      <div class="tutor"><div class="pic" style="background:linear-gradient(150deg,#ffd23f,#ff9f1c);color:#0b1838;font-size:20px;font-weight:800;font-family:'Bricolage Grotesque';text-align:center;padding:20px">Inglês para<br>Viagens</div><div class="info"><b>Inglês para Viagens</b><small>Todos os níveis</small><div class="tags"><span>Aeroporto</span><span>Hotel</span></div></div></div>
-      <div class="tutor"><div class="pic" style="background:linear-gradient(150deg,#7b4dff,#0a2463);color:#fff;font-size:20px;font-weight:800;font-family:'Bricolage Grotesque';text-align:center;padding:20px"><span class="live">Novo</span>Business<br>English</div><div class="info"><b>Business English</b><small>Níveis B1 a C1</small><div class="tags"><span>Reuniões</span><span>Entrevistas</span></div></div></div>
+      <div class="tutor"><div class="pic photo" style="background:linear-gradient(180deg,rgba(10,36,99,.05) 30%,rgba(10,36,99,.92) 100%),url('https://images.pexels.com/photos/3807755/pexels-photo-3807755.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop') center/cover;color:#fff;font-size:20px;font-weight:800;font-family:'Bricolage Grotesque';text-align:center;padding:20px"><span class="live">Iniciante</span>Inglês<br>do Zero</div><div class="info"><b>Inglês do Zero</b><small>Níveis A1 e A2</small><div class="tags"><span>Vocabulário</span><span>Gramática</span></div></div></div>
+      <div class="tutor"><div class="pic photo" style="background:linear-gradient(180deg,rgba(37,99,255,.05) 30%,rgba(37,99,255,.92) 100%),url('https://images.pexels.com/photos/6248760/pexels-photo-6248760.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop') center/cover;color:#fff;font-size:20px;font-weight:800;font-family:'Bricolage Grotesque';text-align:center;padding:20px"><span class="live">Mais lido</span>Conversação<br>Essencial</div><div class="info"><b>Conversação Essencial</b><small>Níveis A2 e B1</small><div class="tags"><span>Frases prontas</span><span>Pronúncia</span></div></div></div>
+      <div class="tutor"><div class="pic photo" style="background:linear-gradient(180deg,rgba(214,120,0,.05) 30%,rgba(214,120,0,.92) 100%),url('https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop') center/cover;color:#fff;font-size:20px;font-weight:800;font-family:'Bricolage Grotesque';text-align:center;padding:20px">Inglês para<br>Viagens</div><div class="info"><b>Inglês para Viagens</b><small>Todos os níveis</small><div class="tags"><span>Aeroporto</span><span>Hotel</span></div></div></div>
+      <div class="tutor"><div class="pic photo" style="background:linear-gradient(180deg,rgba(74,35,170,.05) 30%,rgba(74,35,170,.92) 100%),url('https://images.pexels.com/photos/7433930/pexels-photo-7433930.jpeg?auto=compress&cs=tinysrgb&w=900') center 80%/cover;color:#fff;font-size:20px;font-weight:800;font-family:'Bricolage Grotesque';text-align:center;padding:20px"><span class="live">Novo</span>Business<br>English</div><div class="info"><b>Business English</b><small>Níveis B1 a C1</small><div class="tags"><span>Reuniões</span><span>Entrevistas</span></div></div></div>
     </div>
   </div>
 </section>
