@@ -107,7 +107,7 @@ export function TutorChat({ level, ebook, chapter, chapterTitle, initialRemainin
           <Link href="/app/conta" className="btn btn-yellow w-full">Liberar mais mensagens →</Link>
         ) : (
           <>
-            <div className="mb-2 flex gap-2 overflow-x-auto pb-1">
+            <div className="mb-2 flex flex-wrap gap-1.5">
               {QUICK.map((q) => (
                 <button key={q} disabled={busy} onClick={() => send(q)} className="shrink-0 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-bold text-navy hover:border-blue disabled:opacity-50">{q}</button>
               ))}
