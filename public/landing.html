@@ -503,14 +503,12 @@
         <div class="tab on" data-t="0"><div class="n">01</div><div><h3>Converse com a IA, a qualquer hora</h3><p>Fale com o tutor Max sobre qualquer assunto e receba correção de pronúncia e gramática na hora.</p></div></div>
         <div class="tab" data-t="1"><div class="n">02</div><div><h3>E-books para cada nível</h3><p>Material completo com explicações, exercícios e áudios, do básico ao avançado.</p></div></div>
         <div class="tab" data-t="2"><div class="n">03</div><div><h3>Progresso que você enxerga</h3><p>Acompanhe sua evolução em fala, escuta, leitura e escrita semana a semana.</p></div></div>
-        <div class="tab" data-t="3"><div class="n">04</div><div><h3>Certificado em cada nível</h3><p>Complete um nível e receba um certificado para colocar no currículo e no LinkedIn.</p></div></div>
       </div>
       <div class="stage" style="--stage-img:url(https://images.pexels.com/photos/7651750/pexels-photo-7651750.jpeg?auto=compress&cs=tinysrgb&w=1000)">
         <div class="phone">
           <div class="screen on"><div class="ttl">Tutor Max 🤖</div><div class="bub a">Tell me about your last trip!</div><div class="bub b">I go to Rio last month.</div><div class="bub a">Nice! Try: “I <b>went</b> to Rio last month.” ✨</div><div class="mic">🎙️</div></div>
           <div class="screen"><div class="ttl">Minha biblioteca</div><div class="slot">📘 Inglês do Zero<em>Abrir</em></div><div class="slot">📗 Conversação Essencial<em>62%</em></div><div class="slot">📙 Inglês para Viagens<em>Novo</em></div><div class="slot">📕 Business English<em>Novo</em></div></div>
           <div class="screen"><div class="ttl">Sua evolução</div><small style="color:var(--muted)">Últimas 6 semanas</small><div class="lvl"><i style="height:30%"></i><i style="height:42%"></i><i style="height:50%"></i><i style="height:64%"></i><i style="height:78%"></i><i style="height:92%"></i></div><div class="slot">Fala<em>+38%</em></div><div class="slot">Escuta<em>+27%</em></div></div>
-          <div class="screen"><div class="cert"><div style="font-size:34px">🏅</div><div class="head">B1</div><b>Intermediário</b><p style="font-size:12px;color:var(--muted);margin-top:6px">Certificado SpeakUp</p></div></div>
         </div>
       </div>
     </div>
@@ -542,7 +540,7 @@
       <div class="plan">
         <h3>Mensal</h3><div class="tag">Flexível, cancele quando quiser</div>
         <div class="price"><span class="head">R$ 49</span><span>/mês</span></div>
-        <ul><li>Tutor com IA (30 min/dia)</li><li>E-books do seu nível</li><li>App mobile</li><li>Certificado por nível</li></ul>
+        <ul><li>Tutor com IA (30 min/dia)</li><li>E-books do seu nível</li><li>App mobile</li></ul>
         <a href="/cadastro" class="btn btn-line">Assinar o Mensal</a>
       </div>
       <div class="plan pro">
@@ -634,7 +632,7 @@
   ];
   const $ = s => document.querySelector(s);
   const goalImgs = [["https://images.pexels.com/photos/7644081/pexels-photo-7644081.jpeg?auto=compress&cs=tinysrgb&w=1000","Entrevista de emprego"],["https://images.pexels.com/photos/6726195/pexels-photo-6726195.jpeg?auto=compress&cs=tinysrgb&w=1000","Viajantes no aeroporto"],["https://images.pexels.com/photos/6147148/pexels-photo-6147148.jpeg?auto=compress&cs=tinysrgb&w=1000","Estudantes no campus"],["https://images.pexels.com/photos/8518887/pexels-photo-8518887.jpeg?auto=compress&cs=tinysrgb&w=1000","Amigos conversando com café"],["https://images.pexels.com/photos/6683887/pexels-photo-6683887.jpeg?auto=compress&cs=tinysrgb&w=1000","Estudantes fazendo prova"]];
-  const stageImgs = ["https://images.pexels.com/photos/7651750/pexels-photo-7651750.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.pexels.com/photos/17792266/pexels-photo-17792266.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.pexels.com/photos/3761504/pexels-photo-3761504.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.pexels.com/photos/9829305/pexels-photo-9829305.jpeg?auto=compress&cs=tinysrgb&w=1000"];
+  const stageImgs = ["https://images.pexels.com/photos/7651750/pexels-photo-7651750.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.pexels.com/photos/17792266/pexels-photo-17792266.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.pexels.com/photos/3761504/pexels-photo-3761504.jpeg?auto=compress&cs=tinysrgb&w=1000"];
   [...goalImgs.map(g=>g[0]), ...stageImgs].forEach(u=>{ const im=new Image(); im.src=u; });
   function showGoal(i){
     const g = goals[i];
